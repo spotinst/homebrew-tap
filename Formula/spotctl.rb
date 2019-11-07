@@ -2,16 +2,16 @@
 class Spotctl < Formula
   desc "A unified command-line interface to manage your Spotinst resources."
   homepage "https://api.spotinst.com/"
-  version "0.0.5"
+  version "0.0.6"
   bottle :unneeded
 
   if OS.mac?
-    url "http://github.com/spotinst/spotinst-cli/releases/download/v0.0.5/spotctl-darwin-amd64-0.0.5.tar.gz"
-    sha256 "9a1c5575d6e8bf21415ad5cc0e63d18c3738718754c50c2ccd6b3ea3f3af7203"
+    url "http://github.com/spotinst/spotinst-cli/releases/download/v0.0.6/spotctl-darwin-amd64-0.0.6.tar.gz"
+    sha256 "122aa5ee77fee8c08e9b78eb6f50f07a1b26dcfc6eaf04c001dd1bbebefed50e"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "http://github.com/spotinst/spotinst-cli/releases/download/v0.0.5/spotctl-linux-amd64-0.0.5.tar.gz"
-      sha256 "c97541ee173a399f1888453c2462fd52e75e1b296d543a3768e0fdbee6ce4493"
+      url "http://github.com/spotinst/spotinst-cli/releases/download/v0.0.6/spotctl-linux-amd64-0.0.6.tar.gz"
+      sha256 "7f2c6bb414021ce026f6118ccd4d4667353e94c3be33d94b033a0f11d680e0bc"
     end
   end
 
