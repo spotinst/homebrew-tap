@@ -6,5 +6,5 @@ This repository contains a collection of [Homebrew](https://brew.sh/) formulas p
 
 ```
 $ brew tap spotinst/tap
-$ brew install spotinst-cli
+$ brew install spotctl
 ```
