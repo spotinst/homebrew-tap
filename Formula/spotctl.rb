@@ -10,7 +10,7 @@ class Spotctl < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/spotinst/spotctl/releases/download/v0.27.0/spotctl-darwin-amd64-0.27.0.tar.gz"
-      sha256 "3cfcb1beecee603dc66b55bc0e390b3c8cf95d83d5cc5b278d0da0314bc16ba7"
+      sha256 "0e16c0662b1109275dc1fcea418f231c5278f0ed2397a19cee226e168afdf24e"
 
       def install
         bin.install "spotctl"
@@ -18,7 +18,7 @@ class Spotctl < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/spotinst/spotctl/releases/download/v0.27.0/spotctl-darwin-arm64-0.27.0.tar.gz"
-      sha256 "ac270d38e6013bf75232460afef63e7f75e6a4141a051107d90a4d4a443fa200"
+      sha256 "a2ca01983d0225787a8146d5c97bafa6fff6ddebd7ad9134ce68ebc22a657167"
 
       def install
         bin.install "spotctl"
@@ -27,9 +27,17 @@ class Spotctl < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/spotinst/spotctl/releases/download/v0.27.0/spotctl-linux-arm-0.27.0.tar.gz"
+      sha256 "95ea9996fef39953ea3e334511b5b54b93c4c65ee16b5341c21c5e81ed731205"
+
+      def install
+        bin.install "spotctl"
+      end
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/spotinst/spotctl/releases/download/v0.27.0/spotctl-linux-arm64-0.27.0.tar.gz"
-      sha256 "0b4a859703fe34dfc612ee6516fa8f04315983ff859ea6c8cc36f27ac0ead48c"
+      sha256 "923c0864e01cebe2b8ba2b6eabdb79d862bc07f35c665bfc25d5215c8e42afc7"
 
       def install
         bin.install "spotctl"
@@ -37,15 +45,7 @@ class Spotctl < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/spotinst/spotctl/releases/download/v0.27.0/spotctl-linux-amd64-0.27.0.tar.gz"
-      sha256 "1afbffe886e5d587987ef332bb25730c47105f0e138511a7105f2e5793e168a2"
-
-      def install
-        bin.install "spotctl"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/spotinst/spotctl/releases/download/v0.27.0/spotctl-linux-arm-0.27.0.tar.gz"
-      sha256 "de54a266bb5597e6f9f23e4f9c3ae0f74d80a8a5824390618b9fde203e73bc5d"
+      sha256 "f5d1c118cb8852a182a319b299930a4ed5bc271947a10a53488de6ac96c0a03a"
 
       def install
         bin.install "spotctl"
