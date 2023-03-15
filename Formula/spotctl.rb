@@ -5,20 +5,20 @@
 class Spotctl < Formula
   desc "A unified command-line interface to manage your Spot by NetApp resources."
   homepage "https://spot.io/"
-  version "0.28.0"
+  version "0.29.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/spotinst/spotctl/releases/download/v0.28.0/spotctl-darwin-amd64-0.28.0.tar.gz"
-      sha256 "42536b6f00eda6d32ff1d85bf014e3897ef0dc9171720ae829da284848fdf173"
+      url "https://github.com/spotinst/spotctl/releases/download/v0.29.0/spotctl-darwin-amd64-0.29.0.tar.gz"
+      sha256 "9e65f672eaec2e6f0a5dee59effc3f0ea4ab30e47d9a658fc3323c8f7c2c1ba2"
 
       def install
         bin.install "spotctl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/spotinst/spotctl/releases/download/v0.28.0/spotctl-darwin-arm64-0.28.0.tar.gz"
-      sha256 "f76aaf2ab6dec934a98cce9bc795a64110de5dada87bdc0a6b0d3d17c377c9e4"
+      url "https://github.com/spotinst/spotctl/releases/download/v0.29.0/spotctl-darwin-arm64-0.29.0.tar.gz"
+      sha256 "bd42b8c0e5f146576aa4c17fff1adc1eb294ace1433e1e30f775f1837e017547"
 
       def install
         bin.install "spotctl"
@@ -27,25 +27,25 @@ class Spotctl < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/spotinst/spotctl/releases/download/v0.29.0/spotctl-linux-arm64-0.29.0.tar.gz"
+      sha256 "94d5f8183035a3af7635cdfc087a8b7a0b2233a1228b5940002218c5e69f7e20"
+
+      def install
+        bin.install "spotctl"
+      end
+    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/spotinst/spotctl/releases/download/v0.28.0/spotctl-linux-arm-0.28.0.tar.gz"
-      sha256 "c4ee55492bc27cb38cf0ab2f68401f1453d7d40890b8a6a71ad5d49499285887"
+      url "https://github.com/spotinst/spotctl/releases/download/v0.29.0/spotctl-linux-arm-0.29.0.tar.gz"
+      sha256 "91f0ff40342ab943e77dadf587691695377ef0a168f0c010e56cb7a9867c451d"
 
       def install
         bin.install "spotctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/spotinst/spotctl/releases/download/v0.28.0/spotctl-linux-amd64-0.28.0.tar.gz"
-      sha256 "2f6818b8e44937f1342552b19300cf0aed9715229b654839e66613e531dae227"
-
-      def install
-        bin.install "spotctl"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/spotinst/spotctl/releases/download/v0.28.0/spotctl-linux-arm64-0.28.0.tar.gz"
-      sha256 "5fa9726e0a1ba4ce5587fc3553f621d06426bd67e57d959e90c8848752c7385c"
+      url "https://github.com/spotinst/spotctl/releases/download/v0.29.0/spotctl-linux-amd64-0.29.0.tar.gz"
+      sha256 "c5e250389a2f9eb3b90f6978ab0e46c0e41d726b82edd16be38237e3e16a90a5"
 
       def install
         bin.install "spotctl"
