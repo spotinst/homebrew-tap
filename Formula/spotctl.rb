@@ -10,7 +10,7 @@ class Spotctl < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/spotinst/spotctl/releases/download/v0.30.0/spotctl-darwin-amd64-0.30.0.tar.gz"
-      sha256 "257aad7e90bff85a8454dfd2dfad2f76f2cf2b12d572a5da4e716f31c5345991"
+      sha256 "b249d8765d1c3c1c62d31e3023af252ce821644d102e2f98f8ba427b98dd177b"
 
       def install
         bin.install "spotctl"
@@ -18,7 +18,7 @@ class Spotctl < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/spotinst/spotctl/releases/download/v0.30.0/spotctl-darwin-arm64-0.30.0.tar.gz"
-      sha256 "012751c333a2b702ff5a99f37633f48bc4f74d9b48be4fa64ccdc90a13af5719"
+      sha256 "1107821507b7415e1ab91f28ef82471ff3fa1ed9a8154aeb4ab49a48dcd87da8"
 
       def install
         bin.install "spotctl"
@@ -29,7 +29,7 @@ class Spotctl < Formula
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/spotinst/spotctl/releases/download/v0.30.0/spotctl-linux-arm-0.30.0.tar.gz"
-      sha256 "35e0af4beac3da79ab0ddaf01f5902af69a0e1b9cb8ed7505d670f7cc6d82798"
+      sha256 "4bf5083e6c6fc95a3b92e1d162bf3547f6a2e1d1e173aa71e21529ec4c2483bf"
 
       def install
         bin.install "spotctl"
@@ -37,7 +37,7 @@ class Spotctl < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/spotinst/spotctl/releases/download/v0.30.0/spotctl-linux-amd64-0.30.0.tar.gz"
-      sha256 "f0e670d2e2e866e9dc6477f4ca091e2e538b104e86358557c1c0bed1de1869c0"
+      sha256 "d9a8a1b9e9b949342eb540196646cf64d27445c79b1a7161994b8354b0c0cbd2"
 
       def install
         bin.install "spotctl"
@@ -45,7 +45,7 @@ class Spotctl < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/spotinst/spotctl/releases/download/v0.30.0/spotctl-linux-arm64-0.30.0.tar.gz"
-      sha256 "e2283ee67969f65e2cf325dab7e318910e9c352842acff27da32b2c7c3920573"
+      sha256 "14f87c2d6e46de0fceed2e01d9692ec2620a671f5b7c0dc6a3736f258dd4b279"
 
       def install
         bin.install "spotctl"
