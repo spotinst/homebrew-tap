@@ -5,20 +5,20 @@
 class Oceancd < Formula
   desc "A unified command-line interface to manage your Spot by NetApp Oceancd resources."
   homepage ""
-  version "0.21.0"
+  version "0.25.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/spotinst/spot-oceancd-cli/releases/download/v0.21.0/oceancd-darwin-amd64-0.21.0.tar.gz"
-      sha256 "e915436ee74c723b606b11a13ccf049b24f31bf1fa62fec26dc72104f2c10ac2"
+    if Hardware::CPU.arm?
+      url "https://github.com/spotinst/spot-oceancd-cli/releases/download/v0.25.0/oceancd-darwin-arm64-0.25.0.tar.gz"
+      sha256 "fe274c343d9ae177373776b0f764faf2b50dfc549b21ead0b14bafdeeaded85d"
 
       def install
         bin.install "oceancd"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/spotinst/spot-oceancd-cli/releases/download/v0.21.0/oceancd-darwin-arm64-0.21.0.tar.gz"
-      sha256 "0b7a25cdb01204cad268f379a164119691270b5e8ad0565a4c12317d622c5ed1"
+    if Hardware::CPU.intel?
+      url "https://github.com/spotinst/spot-oceancd-cli/releases/download/v0.25.0/oceancd-darwin-amd64-0.25.0.tar.gz"
+      sha256 "179b61e679ab1ad4c7d966a05ac0efe72524ab568fecb6d6ac5902bfcf76f5c1"
 
       def install
         bin.install "oceancd"
@@ -27,25 +27,25 @@ class Oceancd < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/spotinst/spot-oceancd-cli/releases/download/v0.21.0/oceancd-linux-arm-0.21.0.tar.gz"
-      sha256 "75a58eac85a1d2ec7113b47f839850683211398084ede6b4bc1a5aced8771997"
-
-      def install
-        bin.install "oceancd"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/spotinst/spot-oceancd-cli/releases/download/v0.21.0/oceancd-linux-arm64-0.21.0.tar.gz"
-      sha256 "7200ea5e5579415f3ceb778e30b3333951183276653aa945ee1f9dfa469ec168"
+      url "https://github.com/spotinst/spot-oceancd-cli/releases/download/v0.25.0/oceancd-linux-arm64-0.25.0.tar.gz"
+      sha256 "1bddb6d06960bcf4251931186a4d18307b1e4cd372592d5923a923df24ab22bb"
 
       def install
         bin.install "oceancd"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/spotinst/spot-oceancd-cli/releases/download/v0.21.0/oceancd-linux-amd64-0.21.0.tar.gz"
-      sha256 "570630638661f0c318b4cb44536f4551ca29b3ac7342c3dfda4bee30189e3be2"
+      url "https://github.com/spotinst/spot-oceancd-cli/releases/download/v0.25.0/oceancd-linux-amd64-0.25.0.tar.gz"
+      sha256 "b21cd5f29926d0648af72dc4c5ff003aef6d28c64dc80b45500361cc3f7aa6d2"
+
+      def install
+        bin.install "oceancd"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/spotinst/spot-oceancd-cli/releases/download/v0.25.0/oceancd-linux-arm-0.25.0.tar.gz"
+      sha256 "7f03a9131d2d134d343a4e0db08f8d24d1615d17b620d8501e95cc2f514ddc5e"
 
       def install
         bin.install "oceancd"
